@@ -190,8 +190,8 @@ def controller(data):
     errY = error[1]
     currentPan = ReadPos(1)
     currentTilt = ReadPos(2)
-    panCommand = currentPan - errX
-    tiltCommand = currentTilt - errY
+    panCommand = currentPan - np.sign(errX)*2
+    tiltCommand = currentTilt - np.sign(errY)*2
     moveServo(1,0,panCommand)
     moveServo(2,0,tiltCommand)
 

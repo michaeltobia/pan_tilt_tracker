@@ -59,6 +59,7 @@ def ball_track(image, configIO):
         M = cv2.moments(c)
         try:
             center = (int(M["m10"] / M["m00"]), int(M["m01"] / M["m00"]))
+            print center
         except ZeroDivisionError:
             pass
 
