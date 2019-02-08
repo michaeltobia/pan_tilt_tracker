@@ -198,7 +198,6 @@ def controller(data):
 
 def servoControl():
     rospy.init_node('servo_controller', anonymous=True)
-    global center_err_sub
     center_err_sub = rospy.Subscriber('/center_error', Int16MultiArray, controller)
     try:
         rospy.spin()
